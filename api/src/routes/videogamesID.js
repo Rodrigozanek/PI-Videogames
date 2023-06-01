@@ -28,7 +28,7 @@ try {
                 platforms: X.platforms,
                 createdAt: X.createdAt,
                 updateAt: X.updatedAt,
-                genres: X.genres.map(p => p.name).join(', ')
+                genres: X.genres.map(p => p.name).join(', ')//esta línea de código crea una cadena de texto que representa los géneros del videojuego, donde los nombres de los géneros están separados por comas y espacios. Por ejemplo, si el videojuego tiene dos géneros llamados "Acción" y "Aventura", la cadena resultante sería "Acción, Aventura".
             }
             return res.json(information)
     } else {
@@ -39,7 +39,7 @@ try {
                 name: X.name,
                 image: X.background_image,
                 genres: X.genres && X.genres.map((p) =>
-                    p.name).filter(p => p != null).join(', '),
+                    p.name).filter(p => p != null).join(', '),//esta línea de código crea una cadena de texto que representa los géneros del videojuego, pero antes de realizar el mapeo y la unión, verifica si la propiedad genres existe y no es null ni undefined. Esto evita posibles errores al acceder a propiedades de un objeto nulo o indefinido.
                 description: X.description_raw,
                 released: X.released,
                 rating: X.rating,
