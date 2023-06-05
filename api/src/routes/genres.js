@@ -8,7 +8,7 @@ const router = Router();
 
 // Obtengo los genres desde la API y los guardo en la DB
 
-router.get('/', async function (req, res) {
+router.get('/genres', async function (req, res) {
     try{
         const genresAPI = await axios(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
         genresAPI.data.results.forEach(p => {

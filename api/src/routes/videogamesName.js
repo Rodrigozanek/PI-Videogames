@@ -7,7 +7,7 @@ const { Videogame, Genre } = require("../db.js");
 
 const router = Router();
 
-router.get("/", async (req, res) => { 
+router.get("/name", async (req, res) => { 
 
   const { name } = req.query;
 

@@ -9,7 +9,8 @@ const router = Router();
 router.post('/', async (req, res) => {
   const { name, description, image, released, rating, platforms, genres } = req.body;
 
-  let platformString = platforms.join(', ')
+  try {
+    let platformString = platforms.join(', ')
 
   let gameCreated = await Videogame.create({
     name,
@@ -20,11 +21,16 @@ router.post('/', async (req, res) => {
     platforms: platformString,
   })
 
-  genres.forEach(async (G) => {
-      let genresGame = await Genre.findOne({ where: { name: G } })
-      await gameCreated.addGenre(genresGame)
-  })
-    res.send('Videogame created successfully!')
+  // genres.forEach(async (G) => {
+  //     let genresGame = await Genre.findOne({ where: { name: G } })
+  //     await gameCreated.addGenre(genresGame)
+  // })
+    res.status(200).send('Videogame created!')
+  } catch (error) {
+    res.status(400).json({error: error.message})
+    
+  }
+  
 });
 
 module.exports = router;

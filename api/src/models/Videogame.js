@@ -5,13 +5,13 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('videogame', {
     id:{
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true
+      type: DataTypes.UUID,//identificador unico aleatorio
+      defaultValue: DataTypes.UUIDV4,//crea el id aleatorio conel algoritmo V4
+      primaryKey: true//quedaria algo asi 123-f645-gus6
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,//no puede estar vacío
     },
     image: {
       type: DataTypes.TEXT,
@@ -31,6 +31,6 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
   }, {
-    timestamps: false
+    timestamps: false//no necesito la columna extra donde mustra la fecha de cracion.
  });
 };
