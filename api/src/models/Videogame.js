@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('videogame', {
     id:{
       type: DataTypes.UUID,//identificador unico aleatorio
-      defaultValue: DataTypes.UUIDV4,//crea el id aleatorio conel algoritmo V4
+      defaultValue: DataTypes.UUIDV4,//crea el id aleatorio con el algoritmo V4
       primaryKey: true//quedaria algo asi 123-f645-gus6
     },
     name: {
@@ -31,6 +31,6 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
   }, {
-    timestamps: false//no necesito la columna extra donde mustra la fecha de cracion.
+    timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
  });
 };

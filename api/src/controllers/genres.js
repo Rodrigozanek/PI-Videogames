@@ -13,7 +13,6 @@ async function genres (req, res) {
         
         for(const elemnt of genresAPI){
             await Genre.create({
-                
                 id: elemnt.id,
                 name: elemnt.name,
             })
@@ -23,6 +22,5 @@ async function genres (req, res) {
         res.status(404).json({ message: err.message })
     }
 }
-
 
 module.exports = genres;
