@@ -1,11 +1,9 @@
-
 const {Videogame, Genre} = require('../db.js')
 //Recibe la data colectada desde el formulario por el body
 // Creo el videojuego en la db
 
 async function createVideogame (req, res)  {
   const { name, description, image, released, rating, platforms, genres } = req.body;
-  console.log({ name, description, image, released, rating, platforms, genres });
 
   try {
     let platformString = platforms.join(', ')
@@ -18,7 +16,6 @@ async function createVideogame (req, res)  {
     rating,
     platforms: platformString,
   })
-  console.log(gameCreated);
     let genresGame = await Genre.findAll({
       where: {name: genres}
   })

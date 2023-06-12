@@ -7,7 +7,6 @@ const { Videogame, Genre } = require('../db.js')
 
 // Obtengo el detalle de un videogame en particular por ID
 async function videogamesID (req, res) {
-    console.log(req.params.idVideogame);
     const { idVideogame } = req.params;
     
                 
@@ -19,10 +18,11 @@ try {
             {include: {model: Genre, attributes: ['name']},})
             res.status(200).json(gameDB)
     } else {
+        
     const response = await axios(`https://api.rawg.io/api/games/${idVideogame}?key=${YOUR_API_KEY}`)
                
-                const gameAPI = response.data
-                res.status(200).json(gameAPI)
+        const gameAPI = response.data
+        res.status(200).json(gameAPI)
     }
 } catch (err) {
     res.status(404).json({ error: "ID not found" })

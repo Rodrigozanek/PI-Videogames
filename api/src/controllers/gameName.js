@@ -1,14 +1,14 @@
 require('dotenv').config();
 const axios = require("axios");
 const { YOUR_API_KEY } = process.env; 
-const { Genre, Videogame } = require('../db.js');
+const { Videogame } = require('../db.js');
 
 async function gameName (req, res){
     const {name} = req.query;
     
     const gamesDB = await Videogame.findAll({
         where: { name: name },
-        include: [Genre],
+        // include: [Genre],
       });
 
       if (gamesDB) {
