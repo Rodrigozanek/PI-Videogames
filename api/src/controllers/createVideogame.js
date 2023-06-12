@@ -17,10 +17,10 @@ async function createVideogame (req, res)  {
     platforms: platformString,
   })
     let genresGame = await Genre.findAll({
-      where: {name: genres}
-  })
+      where: { name: genres }
+    });
  
-  await gameCreated.addGenre(genresGame);    
+  gameCreated.addGenre(genresGame);    
     res.status(200).json(gameCreated)
   } catch (error) {
     res.status(400).json({error: error.message}) 
