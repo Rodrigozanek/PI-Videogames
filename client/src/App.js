@@ -1,11 +1,21 @@
-import './App.css';
+import {Route, BrowserRouter} from "react-router-dom"
+import Home from "./views/home/home.jsx"
+import Detail from "./views/detail/detail.jsx"
+import LandingPage from "./views/landingPage/landingPage.jsx"
+import Form from "./views/form/form.jsx"
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Videogames</h1>
-      <p>hola</p>
+    <BrowserRouter>
+    <div>
+      <Route exact path="home" element={<Home />}/>
+      <Detail />
+      <LandingPage />
+      <Form />
     </div>
+    </BrowserRouter>
   );
 }
 
