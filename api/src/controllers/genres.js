@@ -5,10 +5,10 @@ const { Genre } = require('../db.js');
 
 // Obtengo los genres desde la API y los guardo en la DB
 
-async function genres (req, res) {
-    // res.send("hola")
+async function Genres (req, res) {
+
     try{
-        const response = await axios(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
+        const response = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
         const genresAPI = response.data.results;
         
         for(const elemnt of genresAPI){
@@ -23,4 +23,4 @@ async function genres (req, res) {
     }
 }
 
-module.exports = genres;
+module.exports = Genres;
