@@ -1,5 +1,5 @@
 import React from "react";
-import Estilos from "../form/form.module.css"
+import Estilos from "./form.module.css"
 
 function Form () {
     return (

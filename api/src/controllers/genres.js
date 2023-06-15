@@ -18,8 +18,8 @@ async function Genres (req, res) {
             })
         }
         res.status(200).json(genresAPI)
-    } catch (err) {
-        res.status(404).json({ message: err.message })
+    } catch (error) {
+        res.status(404).json({ message: error.message })
     }
 }
 

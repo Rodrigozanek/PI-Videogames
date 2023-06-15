@@ -1,10 +1,11 @@
 import React from "react";
 import Estilos from "../landingPage/landingPage.module.css"
+import { Link } from "react-router-dom";
 
 function LandingPage () {
     return (
-        <div>
-            <h1 className={Estilos.Titulo}>estamos en LandingPage</h1>
+        <div className={Estilos.divGeneral}>
+            <Link to={'home'}><button>HOME</button></Link>
         </div>
     )
 };

@@ -20,9 +20,9 @@ async function gameName (req, res){
         }); 
       }
 
-      const response = await axios(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}&page_size=15`);
+      const response = (await axios(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}&page_size=15`));
     const gamesAPIResults = response.data.results;
-    res.json(gamesAPIResults.concat(gamesDBFull));
+    res.status(200).json(gamesAPIResults.concat(gamesDBFull));
     }
 
 module.exports = gameName;

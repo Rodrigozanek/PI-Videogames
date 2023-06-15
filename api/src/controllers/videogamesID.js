@@ -3,8 +3,6 @@ const axios = require('axios');
 const { YOUR_API_KEY } = process.env;
 const { Videogame, Genre } = require('../db.js')
 
-
-
 // Obtengo el detalle de un videogame en particular por ID
 async function videogamesID (req, res) {
     const { idVideogame } = req.params;
