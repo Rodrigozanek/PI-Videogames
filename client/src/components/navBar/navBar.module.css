@@ -5,4 +5,87 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-bottom: 10px;
     background-color: transparent;
+    padding: 10px;
+}
+
+.BarraBusqueda{
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 200px;
+    height: 25  px;
+}
+
+.botInicio{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px; 
+    text-decoration: transparent;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.botInicio:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
+}
+
+.botCreate{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 20px; 
+    text-decoration: transparent;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.botCreate:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
+}
+
+.botBack{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px; 
+    text-decoration: transparent;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.botBack:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
+}
+
+.about{
+    text-decoration: none;
+    color: rgb(203, 25, 25);
+    font-size: 30px;
+    cursor: pointer;
 }

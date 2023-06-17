@@ -1,5 +1,33 @@
 
 .divGeneral{
     align-items: center;
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-self: center;
+    margin-top: 12px;
+    margin-left: 45%;
+}
+
+.botonHome{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px; 
+    text-decoration: transparent;
     background-color: gray;
+    color: white;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.botonHome:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
 }

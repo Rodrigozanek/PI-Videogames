@@ -1,0 +1,15 @@
+.divGeneral{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: gray;
+    border-radius: 30px;
+    border: 3px solid black;
+}
+
+.Titular{
+    color: rgb(194, 10, 10);
+    font-size: 50px;
+    text-decoration: none;
+}

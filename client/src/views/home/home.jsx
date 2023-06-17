@@ -1,12 +1,23 @@
-import React from "react";
-import Cards from "../../components/cards/cards";
+import {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getGames } from "../../redux/actions";
+
+
+import Cards from "../../components/cards/cards.jsx";
 import Estilos from "../home/home.module.css"
 
 function Home () {
+    const dispatch = useDispatch();
+    const allGames = useSelector((state)=>state.allGames)//home suscripto al estado allGames 
+    useEffect(()=>{
+    dispatch(getGames())//en el momento que se cargue la pagina se cargan las cards
+    },[dispatch])
+    console.log(allGames);
+
+
     return (
         <div className={Estilos.div}>
-            <h1 className={Estilos.Titulo}>Estamos en el home</h1>
-            <Cards/>
+            <Cards allGames={allGames}/>
         </div>
     )
 };
