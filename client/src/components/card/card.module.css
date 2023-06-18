@@ -22,3 +22,7 @@
     width: 200px;
     border: solid gray;
 }
+
+.nameCard{
+    text-decoration: none;
+}

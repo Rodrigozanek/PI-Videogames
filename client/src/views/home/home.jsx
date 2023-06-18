@@ -12,7 +12,7 @@ function Home () {
     useEffect(()=>{
     dispatch(getGames())//en el momento que se cargue la pagina se cargan las cards
     },[dispatch])
-    console.log(allGames);
+    // console.log(allGames);
 
 
     return (
