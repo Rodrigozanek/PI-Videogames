@@ -17,7 +17,7 @@ try {
             res.status(200).json(gameDB)
     } else {
         
-    const response = await axios(`https://api.rawg.io/api/games/${idVideogame}?key=${YOUR_API_KEY}`)
+    const response = (await axios(`https://api.rawg.io/api/games/${idVideogame}?key=${YOUR_API_KEY}`))
                
         const gameAPI = response.data
         res.status(200).json(gameAPI)

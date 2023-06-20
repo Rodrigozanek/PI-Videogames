@@ -1,10 +1,9 @@
-import { ALL_GAMES } from "./actionsTypes";
+import { ALL_GAMES, SEARCH_NAME, ID_GAME } from "./actionsTypes";
 import axios from "axios";
-// const URL = 'https://api.rawg.io/api/games?key='
-// const API_KEY = 'c935b0e1cb634ca5827bd707a1e3e85b'
 
 
-//http://localhost:3001/videogames
+
+
 export function getGames(){
     return async function(dispatch){
         const response = await axios('http://localhost:3001/videogames')
@@ -15,5 +14,23 @@ export function getGames(){
     }
 }
 
+export function searchGame(name){
+    return async function(dispatch){
+        const response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
+        return dispatch({
+            type: SEARCH_NAME,
+            payload: response.data
+        })
+    }
+}
 
+export function idGame(id){
+    return async function(dispatch){
+        const response = await axios(`http://localhost:3001/videogames/${id}`)
+        return dispatch({
+            type: ID_GAME,
+            payload: response.data
+        })
+    }
+}
 

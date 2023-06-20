@@ -6,7 +6,7 @@ function LandingPage () {
     return (
         <div className={Estilos.divGeneral}>
             <Link to={'home'}>
-                <button className={Estilos.botonHome}>HOME</button>
+                <button className={Estilos.boton_home}>HOME</button>
                 </Link>
         </div>
     )

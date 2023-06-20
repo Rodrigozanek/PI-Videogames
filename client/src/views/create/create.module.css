@@ -1,3 +1,26 @@
 .Titulo{
     background-color: black;
 }
+
+.btnHome{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px; 
+    text-decoration: transparent;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.btnHome:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
+}

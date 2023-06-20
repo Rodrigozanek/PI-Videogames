@@ -7,11 +7,12 @@ function About () {
     <div>
         <div className={Estilos.divGeneral}>
         <Link to={"https://www.soyhenry.com/"}><h1 className={Estilos.Titular}>HENRY</h1></Link>
-        <h1>¡VIENVENIDOS A MI PI!</h1> <br />
+        <h1>¡Bienvenidos a mi sitio web personalizado!</h1> <br />
 
-        <h2>Arme esta pagina web con el fin de poner en practica todo el conocimiento aprendido en este tiempo.</h2>
-        <h2>Mi primera pagina WEB armada desde cero!! </h2>
+        <h2>He creado esta página con el propósito de poner en práctica todos los conocimientos adquiridos hasta ahora. ¡Es mi primera creación web desde cero! Me esforcé para que tenga un aspecto más profesional y atractivo.</h2>
+        <h2>Espero que disfruten explorando este sitio y que les sea útil. ¡Gracias por visitar mi página web! </h2>
         </div>
+        <Link to={-1}><button className={Estilos.boton_Back}>Back</button></Link>
     </div>
     )
 };
