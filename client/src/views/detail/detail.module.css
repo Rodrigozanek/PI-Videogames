@@ -47,3 +47,9 @@
 .description{
     background-color: rgba(128, 128, 128, 0.831);
 }
+
+.imagen_detail{
+    width: 180px; 
+    height: 100px;
+    border-radius: 20px;
+}

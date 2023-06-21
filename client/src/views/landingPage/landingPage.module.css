@@ -1,7 +1,6 @@
 
 .divGeneral{
     align-items: center;
-    background-color: transparent;
     height: 100px;
     width: 100px;
     justify-content: center;
@@ -10,7 +9,7 @@
     margin-left: 45%;
 }
 
-.boton_home{
+.boton_inicio{
     display: flex;
     justify-content: center;
     align-self: center;
@@ -24,9 +23,10 @@
     color: white;
     cursor: pointer;
     border: 2px solid black;
+    
 }
 
-.boton_home:hover{
+.boton_inicio:hover{
     transform: scale(0.8);
     transition-duration: 0.5s;
     background-color: darkred;

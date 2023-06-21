@@ -9,10 +9,38 @@
 }
 
 .BarraBusqueda{
+    margin-top: 10px;
+    display: flex;
     border-radius: 20px;
     border: 1px solid black;
     width: 200px;
-    height: 25  px;
+    height: 40px;
+}
+
+.formulario_nav{
+    display: flex;
+    margin-top: 10px;
+    /* background-color: red; */
+    margin-bottom: 10px;
+}
+
+.botSearch{
+    margin-bottom: 10px; 
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px; 
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.botSearch:hover{
+    transform: scale(0.8);
+    transition-duration: 0.5s;
+    background-color: darkred;
 }
 
 .botInicio{
@@ -53,6 +81,7 @@
     margin-top: 10px;
     cursor: pointer;
     border: 2px solid black;
+    font-size: 19px;
 }
 .botCreate:hover{
     transform: scale(0.8);
@@ -60,14 +89,15 @@
     background-color: darkred;
 }
 
-.botBack{
+
+.about{
     display: flex;
     justify-content: center;
     align-self: center;
     align-items: center; 
     width: 100px;
     height: 40px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 20px; 
     text-decoration: transparent;
     background-color: gray;
@@ -77,15 +107,8 @@
     border: 2px solid black;
 }
 
-.botBack:hover{
+.about:hover{
     transform: scale(0.8);
     transition-duration: 0.5s;
     background-color: darkred;
-}
-
-.about{
-    text-decoration: none;
-    color: rgb(203, 25, 25);
-    font-size: 30px;
-    cursor: pointer;
 }

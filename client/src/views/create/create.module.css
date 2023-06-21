@@ -17,10 +17,60 @@
     margin-top: 10px;
     cursor: pointer;
     border: 2px solid black;
+    margin-top: 40px;
+    margin-left: 45%;
 }
 
 .btnHome:hover{
     transform: scale(0.8);
     transition-duration: 0.5s;
     background-color: darkred;
+}
+
+.formulario{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    background-color:rgb(128, 128, 128);
+    height: 600px;
+    width: 500px;
+    margin-left: 30%;
+    border-radius: 20px;
+}
+
+.opciones{
+    display: flex;
+    margin-left: 29%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.Input{
+    border-radius: 10px;
+    height: 20px;
+}
+
+.btn_create{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center; 
+    width: 120px;
+    height: 47px;
+    font-size: 20px;
+    border-radius: 20px; 
+    text-decoration: transparent;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-block-end: 10px;
+    margin-left: 45%;
+}
+
+.btn_create:hover{
+    background-color: rgb(0, 168, 0);
+    color: black;
 }
