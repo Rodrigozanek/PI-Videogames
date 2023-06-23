@@ -1,6 +1,6 @@
-import { ALL_GAMES, SEARCH_NAME, ID_GAME } from "../actions/actionsTypes";
+import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES } from "../actions/actionsTypes";
 
-let initialState = {allGames:[], gamesCopy:[], game: []}
+let initialState = { allGames:[], gamesCopy:[], game: [], genres: [] }
 
 function reducer (state = initialState, {type, payload}){
     switch (type) {
@@ -19,6 +19,16 @@ function reducer (state = initialState, {type, payload}){
             return{
                 ...state,
                 game: payload
+            }
+
+        case POST_GAME:
+            return{
+                ...state
+            }
+        case ALL_GENRES:
+            return{
+                ...state,
+                genres: payload
             }
 
         default:

@@ -8,16 +8,20 @@ const { Genre } = require('../db.js');
 async function Genres (req, res) {
 
     try{
-        const response = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
-        const genresAPI = response.data.results;
-        
-        for(const elemnt of genresAPI){
-            await Genre.create({
-                id: elemnt.id,
-                name: elemnt.name,
-            })
+        const data1 = await Genre.count()
+        if(data1 === 0){
+            const response = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
+            const genresAPI = response.data.results;
+            
+            for(const elemnt of genresAPI){
+                await Genre.create({
+                    id: elemnt.id,
+                    name: elemnt.name,
+                })
+            }
         }
-        res.status(200).json(genresAPI)
+        const generosDB = await Genre.findAll()
+        res.status(200).json(generosDB)
     } catch (error) {
         res.status(404).json({ message: error.message })
     }

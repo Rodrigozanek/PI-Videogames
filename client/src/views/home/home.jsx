@@ -26,12 +26,22 @@ function Home () {
     useEffect(()=>{
     dispatch(getGames())//en el momento que se cargue la pagina se cargan las cards
     },[dispatch])
-    // console.log(allGames);
 
 
     return (
         <div className={Estilos.div}>
             <NavBar handleChange={handleChange} handleSubmit={handleSubmit}/>
+            <div className={Estilos.genero_conteiner}>
+                <h4 className={Estilos.h4_filter}>Genero:</h4>
+                <select>
+                    <option></option>
+                </select> <br />
+
+                <h4 className={Estilos.h4_filter}>Ordenamiento:</h4> 
+                <select>
+                    <option></option>
+                </select>
+            </div>
             <Cards allGames={allGames}/>
         </div>
     )

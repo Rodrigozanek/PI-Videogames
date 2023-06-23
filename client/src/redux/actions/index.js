@@ -1,4 +1,4 @@
-import { ALL_GAMES, SEARCH_NAME, ID_GAME } from "./actionsTypes";
+import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES } from "./actionsTypes";
 import axios from "axios";
 
 
@@ -31,6 +31,28 @@ export function idGame(id){
             type: ID_GAME,
             payload: response.data
         })
+    }
+}
+
+export function post (data){
+    return async function(dispatch){
+        const response = await axios.post('http://localhost:3001/videogames', data)
+        return dispatch({
+            type: POST_GAME,
+            payload: response
+        })
+    }
+}
+
+export function genresDB (){
+    return async function(dispatch){
+        const response = await axios.get('http://localhost:3001/genres')
+        console.log(response);
+        return dispatch({
+            type: ALL_GENRES,
+            payload: response.data
+        })
+    
     }
 }
 
