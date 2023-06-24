@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-
+//100 cartas iniciales
 export function getGames(){
     return async function(dispatch){
         const response = await axios('http://localhost:3001/videogames')
@@ -13,7 +13,7 @@ export function getGames(){
         })
     }
 }
-
+//busqueda por nombre
 export function searchGame(name){
     return async function(dispatch){
         const response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
@@ -24,6 +24,7 @@ export function searchGame(name){
     }
 }
 
+//detalle de los juegos
 export function idGame(id){
     return async function(dispatch){
         const response = await axios(`http://localhost:3001/videogames/${id}`)
@@ -34,7 +35,8 @@ export function idGame(id){
     }
 }
 
-export function post (data){
+//post de un juego
+export function createGame (data){
     return async function(dispatch){
         const response = await axios.post('http://localhost:3001/videogames', data)
         return dispatch({
@@ -44,6 +46,7 @@ export function post (data){
     }
 }
 
+//todos los generos de los juegos
 export function genresDB (){
     return async function(dispatch){
         const response = await axios.get('http://localhost:3001/genres')

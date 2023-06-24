@@ -12,6 +12,7 @@ function NavBar ({handleChange, handleSubmit}) {
             <input placeholder="Busqueda" type="search" className={Estilos.BarraBusqueda}/>
             <button type="submit" onClick={handleSubmit} className={Estilos.botSearch}>Buscar</button>
             </form>
+            {console.log(handleSubmit)};
             
             <Link to={'/create'}><button className={Estilos.botCreate}>Create</button></Link>
         </div>
