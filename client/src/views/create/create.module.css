@@ -36,10 +36,12 @@
     width: 500px;
     margin-left: 30%;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .opciones{
     display: flex;
+    flex-direction: column;
     margin-left: 29%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -73,4 +75,9 @@
 .btn_create:hover{
     background-color: rgb(0, 168, 0);
     color: black;
+}
+
+.plataformas_select{
+    display: flex;
+    flex-direction: column;
 }

@@ -38,7 +38,7 @@ function Detail () {
             {Array.isArray(game.platforms) ? (
             game.platforms.map(p => p.platform.name).join(", ")
             ) : (
-            "Platforms data is not available"
+              (game.platforms)
             )}
             </ul>
 

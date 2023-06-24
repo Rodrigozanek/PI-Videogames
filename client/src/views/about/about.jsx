@@ -1,10 +1,12 @@
 import React from "react";
 import Estilos from "../about/about.module.css";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import NavBar from "../../components/navBar/navBar.jsx";
 
 function About () {
     return (
     <div>
+        <NavBar/>
         <div className={Estilos.divGeneral}>
         <Link to={"https://www.soyhenry.com/"}><h1 className={Estilos.Titular}>HENRY</h1></Link>
         <h1>¡Bienvenidos a mi sitio web personalizado!</h1> <br />

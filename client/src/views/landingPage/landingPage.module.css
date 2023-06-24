@@ -1,12 +1,12 @@
 
 .divGeneral{
-    align-items: center;
-    height: 100px;
-    width: 100px;
+    height: 100vh;
+    background: url("./imagen.jpg");
+    background-size: cover;
+    background-size: contain;
+    display: flex;
     justify-content: center;
-    align-self: center;
-    margin-top: 150px;
-    margin-left: 45%;
+    align-items: center;
 }
 
 .boton_inicio{
@@ -16,6 +16,7 @@
     align-items: center; 
     width: 100px;
     height: 40px;
+    margin-top: 250px;
     font-size: 20px;
     border-radius: 20px; 
     text-decoration: transparent;

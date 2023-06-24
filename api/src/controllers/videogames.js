@@ -30,6 +30,7 @@ async function videogames (req, res) {
       jsonGames.forEach(C => {
         C.source = "Created", 
         C.genres = C.genres.map((genre) => genre.name).filter(p => p != null).join(', ')
+        C.image = C.image
       });
       gamesResults = gamesResults.concat(jsonGames)
 
