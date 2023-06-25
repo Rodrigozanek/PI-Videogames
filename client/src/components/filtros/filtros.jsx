@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { genresDB, genresFilter, filterCreator, filterAsc, filterDesc } from "../../redux/actions";
+import Estilos from "../filtros/filtros.module.css"
 
 
 
@@ -44,20 +45,24 @@ export function Filtros({pagina}) {
   };
 
   return (
-    <div>
+    <div className={Estilos.div_conteiner}>
       <div>
-        <div>Generos</div>
-        <select onChange={(e) => handleFilter(e)}>
-          <option default>All</option>
+        <div className={Estilos.div_filtros}>
+        <h2 className={Estilos.nombre_filtro}>Generos</h2>
+        </div>
+        <select className={Estilos.select_order} onChange={(e) => handleFilter(e)}>
+          <option default>Todos</option>
           {genres.map((G) => (
             <option value={G.name}>{G.name}</option>
           ))}
         </select>
       </div>
       <div>
-        <div>Ordenamiento</div>
-        <select onChange={(e) => handleOrder(e)}>
-          <option value="All" default>All</option>
+        <div className={Estilos.div_filtros}>
+        <h2 className={Estilos.nombre_filtro}>Ordenamiento</h2>
+        </div>
+        <select className={Estilos.select_order} onChange={(e) => handleOrder(e)}>
+          <option value="All" default>Todos</option>
           <option value="asc_name">Alphabetically (A-Z)</option>
           <option value="desc_name">Alphabetically (Z-A)</option>
           <option value="asc_rating">Rating (Lower-Higher)</option>
@@ -65,11 +70,13 @@ export function Filtros({pagina}) {
         </select>
       </div>
       <div>
-        <div>Filtro de Creacion</div>
-        <select onChange={(e) => handleCreator(e)} >
-          <option default>All</option>
-          <option value="Api">Api videogames</option>
-          <option value="Created">User videogames</option>
+        <div className={Estilos.div_filtros}>
+        <h2 className={Estilos.nombre_filtro}>Filtros de Creacion</h2>
+        </div>
+        <select className={Estilos.select_order} onChange={(e) => handleCreator(e)} >
+          <option default>Todos</option>
+          <option value="Api">API</option>
+          <option value="Created">Base de Datos</option>
         </select>
       </div>
     </div>

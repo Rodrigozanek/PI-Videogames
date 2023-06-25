@@ -1,0 +1,27 @@
+.nombre_filtro{
+    font-size: 20px;
+}
+
+.div_conteiner{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    /* background-color: red; */
+    margin-left: -52%;
+}
+
+.select_order{
+    border-radius: 20px;
+    height: 20px;
+}
+
+.div_filtros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.83);
+    border-radius: 10px;
+}

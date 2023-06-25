@@ -123,7 +123,7 @@
 // // //       <NavBar/>
 // // //       <form className={Estilos.formulario} onSubmit={handleSubmit}>
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Name:</label>
+// // //           <h4>Name:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="name"
@@ -136,7 +136,7 @@
 // // //         <br />
 
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Image:</label>
+// // //           <h4>Image:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="image"
@@ -148,7 +148,7 @@
 // // //         <br />
 
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Description:</label>
+// // //           <h4>Description:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="description"
@@ -160,7 +160,7 @@
 // // //         <br />
 
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Platform:</label>
+// // //           <h4>Platform:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="platforms"
@@ -172,7 +172,7 @@
 // // //         <br />
 
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Released:</label>
+// // //           <h4>Released:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="released"
@@ -184,7 +184,7 @@
 // // //         <br />
 
 // // //         <div className={Estilos.opciones}>
-// // //           <label>Rating:</label>
+// // //           <h4>Rating:</h4>
 // // //           <input
 // // //             className={Estilos.Input}
 // // //             name="rating"
@@ -318,12 +318,12 @@ function Create () {
             return
         }
         if (!obj.description) {
-            alert("El campo nombre no puede estar descripcion")
+            alert("El campo nombre no puede estar vacio")
             return
         }if (!obj.released) {
             alert("La fecha no puede estar vacio")
             return
-        }if (obj.rating > 5 || obj.rating < 0) {
+        }if (obj.rating >= 5 || obj.rating <= 0) {
             alert("El campo rating debe ser un numero entre 0 a 5")
             return
         }
@@ -346,117 +346,130 @@ function Create () {
     };
 
 return (
-    <div >
-      <NavBar/>
-        <h1>Crear un videoGame</h1>
-        <form className={Estilos.formulario}
-            noValidate
-            onChange={(e) => ChangeInput(e)}
-            onSubmit={(e) => handleSubmit(e)}
-        >
-            <div>
-            <div>
-                <div >
-                    <div>
-                        <label>-Name-</label>
-                        <input
-                        
-                        type="text"
-                        name="name"
-                        value={game.name}
-                        ></input>
-                    </div>
-                    <div>
-                        <label>-Description-</label>
-                        <input
-                        
-                        type="text"
-                        name="description"
-                        value={game.description}
-                        ></input>
-                    </div>
-                    <div>
-                        <label>-Released-</label>
-                        <input
-                        
-                        type="date"
-                        name="released"
-                        value={game.released}
-                        ></input>
-                    </div>
-                    <div>
-                        <label>-Rating-</label>
-                        <input
-                        
-                        type="number"
-                        name="rating"
-                        value={game.rating}
-                        ></input>
-                    </div>
-                </div>
-                <div >
-                    <label>-Image URL-</label>
+<div>
+<NavBar/>
+
+    <div className={Estilos.divTitulo}>
+    <h1 className={Estilos.Titulo}>!CREATE GAME¡</h1>
+    </div>
+
+    <form className={Estilos.formulario}
+        noValidate
+        onChange={(e) => ChangeInput(e)}
+        onSubmit={(e) => handleSubmit(e)}>
+        <div>
+        <div>
+            <div >
+                <div>
+                    <h4 className={Estilos.h4_options_title}>NAME:</h4>
                     <input
-                    
+                    className={Estilos.Input}
                     type="text"
-                    name="image"
-                    value={game.image}
+                    name="name"
+                    value={game.name}
+                    ></input>
+                </div> <br />
+
+                <div>
+                    <h4 className={Estilos.h4_options_title}>DESCRIPTION:</h4>
+                    <input
+                    className={Estilos.Input}
+                    type="text"
+                    name="description"
+                    value={game.description}
+                    ></input>
+                </div> <br />
+
+                <div>
+                    <h4 className={Estilos.h4_options_title}>RELEASED:</h4>
+                    <input
+                    className={Estilos.Input}
+                    type="date"
+                    name="released"
+                    value={game.released}
+                    ></input>
+                </div> <br />
+
+                <div>
+                    <h4 className={Estilos.h4_options_title}>RATING:</h4>
+                    <input
+                    className={Estilos.Input}
+                    type="number"
+                    name="rating"
+                    value={game.rating}
                     ></input>
                 </div>
+            </div> <br />
+
+            <div >
+                <h4 className={Estilos.h4_options_title}>Image URL:</h4>
+                <input
+                className={Estilos.Input}
+                type="text"
+                name="image"
+                value={game.image}
+                ></input>
             </div>
-                <div >
-                    <div >
-                        <label>-Genres-</label>
-                        <div >
-                            <div>
-                                {genres1.map((gen) => (
-                                <div key={gen.name}>
-                                    <input
-                                    type="checkbox"
-                                    name="genres"
-                                    value={gen.name}
-                                    ></input>
-                                    <label name={gen}>{gen.name}</label>
-                                </div>
-                                ))}
-                            </div>
-                            <div>
-                                {genres2.map((gen) => (
-                                <div key={gen.name}>
-                                    <input
-                                    type="checkbox"
-                                    name="genres"
-                                    value={gen.name}
-                                    ></input>
-                                    <label name={gen}>{gen.name}</label>
-                                </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div >
-                        <label>-Platforms-</label>
-                        <div >
-                            {randomPlatforms.map((P) => (
-                            <div key={P}>
+        </div>
+
+        
+            <div >
+                <div > <br />
+
+
+                    <h4 className={Estilos.h4_options_title}>Options GENRES</h4>
+                    <div className={Estilos.opciones}>
+                        <div>
+                            {genres1.map((gen) => (
+                            <div key={gen.name}>
+                                <h4 name={gen}>{gen.name}</h4>
                                 <input
                                 type="checkbox"
-                                name="platforms"
-                                value={P}
+                                name="genres"
+                                value={gen.name}
                                 ></input>
-                                <label name={P}>{P}</label>
+                            </div>
+                            ))}
+                        </div>
+                        <div>
+                            {genres2.map((gen) => (
+                            <div key={gen.name}>
+                                <h4 name={gen}>{gen.name}</h4>
+                                <input
+                                type="checkbox"
+                                name="genres"
+                                value={gen.name}
+                                ></input>
                             </div>
                             ))}
                         </div>
                     </div>
-                    
                 </div>
-                <button  type="submit">
-                    Create!
-                </button>
+                <div > <br />
+
+                    <h4 className={Estilos.h4_options_title}>Options PLATFORMS</h4>
+                    <div className={Estilos.opciones}>
+                        {randomPlatforms.map((P) => (
+                        <div key={P}>
+                            <h4 name={P}>{P}</h4>
+                            <input
+                            type="checkbox"
+                            name="platforms"
+                            value={P}
+                            ></input>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+                
             </div>
-        </form>
-    </div>
+
+            <div className={Estilos.div_botonCreate}>
+                <button className={Estilos.btn_create} type="submit">Create!</button>
+            </div>
+        </div>
+    </form>
+</div>
 );
 
 

@@ -1,6 +1,7 @@
 .pag{
     display: flex;
     grid-template-columns:auto;
-    gap: 1px;
+    gap: 20px;
     justify-content: center ;
+    padding: 20px;
 }

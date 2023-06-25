@@ -1,30 +1,15 @@
-.Titulo{
-    background-color: black;
+.divTitulo{
+    background-color: rgba(247, 114, 99, 0.753);
+    margin-left: 37%;
+    margin-right: 33%;
 }
 
-.btnHome{
+.Titulo{
     display: flex;
     justify-content: center;
+    align-items: center;
     align-self: center;
-    align-items: center; 
-    width: 100px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 20px; 
-    text-decoration: transparent;
-    background-color: gray;
     color: white;
-    margin-top: 10px;
-    cursor: pointer;
-    border: 2px solid black;
-    margin-top: 40px;
-    margin-left: 45%;
-}
-
-.btnHome:hover{
-    transform: scale(0.8);
-    transition-duration: 0.5s;
-    background-color: darkred;
 }
 
 .formulario{
@@ -32,24 +17,34 @@
     margin-top: 20px;
     flex-direction: column;
     background-color:rgb(128, 128, 128);
-    height: 600px;
-    width: 500px;
+    height: 1800px;
+    width: 550px;
     margin-left: 30%;
     border-radius: 20px;
     margin-bottom: 10px;
 }
 
 .opciones{
-    display: flex;
-    flex-direction: column;
-    margin-left: 29%;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+.h4_options_title{
+    margin-left: 25px;
+    font-size: 19px;
 }
 
 .Input{
     border-radius: 10px;
     height: 20px;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.div_botonCreate{
+    margin-right: 18%;
 }
 
 .btn_create{
@@ -60,20 +55,19 @@
     width: 120px;
     height: 47px;
     font-size: 20px;
-    border-radius: 20px; 
-    text-decoration: transparent;
-    background-color: gray;
+    border-radius: 20px;
+    background-color: rgb(186, 50, 0);
     color: white;
     margin-top: 10px;
     cursor: pointer;
-    border: 2px solid black;
+    border: 3px solid black;
     margin-top: 20px;
     margin-block-end: 10px;
     margin-left: 45%;
 }
 
 .btn_create:hover{
-    background-color: rgb(0, 168, 0);
+    background-color: rgb(0, 147, 0);
     color: black;
 }
 

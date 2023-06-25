@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 function LandingPage () {
     return (
         <div className={Estilos.divGeneral}>
+                                                                                                                                                                                        
             <Link to={'home'}>
-                <button className={Estilos.boton_inicio}>HOME</button>
+                <button className={Estilos.boton_inicio}>START</button>
             </Link>
         </div>
     )
