@@ -1,6 +1,14 @@
-import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES } from "../actions/actionsTypes";
+import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES, RESET, FILTER_GENRES, ASC_RATING_ORDER, DESC_RATING_ORDER, FILTER_CREATOR } from "../actions/actionsTypes";
 
-let initialState = { allGames:[], gamesCopy:[], game: [], genres: [] }
+let initialState = { 
+    allGames:[],
+    gamesCopy:[],
+    game: [],
+    genres: [],
+    filteredVideogames: [],
+    orderBy: "Select",
+    filterBy: "All",
+}
 
 function reducer (state = initialState, {type, payload}){
     switch (type) {
@@ -30,6 +38,44 @@ function reducer (state = initialState, {type, payload}){
                 ...state,
                 genres: payload
             }
+//----------------------------FILTROS--------------------------
+case RESET:
+    return {
+        ...state,
+        allGames: [],
+        filteredVideogames: [],
+        orderBy: "Select",
+        filterBy: "All",
+    }
+    case FILTER_GENRES:
+        return {
+          ...state,
+          filteredVideogames: payload.videogameGenre,
+          filterBy: payload.genres,
+        };
+
+
+
+
+  // posible falla
+      case ASC_RATING_ORDER:
+      case DESC_RATING_ORDER:
+        return {
+          ...state,
+          filteredVideogames: payload.videogamesOrder,
+          orderBy: payload.name,
+        };
+  //-----------------------------------------------------
+
+
+
+
+      case FILTER_CREATOR:
+      return {
+        ...state,
+        filteredVideogames: payload.allGames,
+        filterBy: payload.source,
+              };
 
         default:
             return {...state};

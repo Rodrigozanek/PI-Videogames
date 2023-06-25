@@ -9,15 +9,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   
-  <React.StrictMode>
     <Provider store={store}>
+  <React.StrictMode>
       <BrowserRouter>
 
         <App />
   
       </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
+    </Provider>,
   
   document.getElementById('root')
 );

@@ -2,20 +2,6 @@
     margin-top: 20px;
 }
 
-.genero_conteiner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    flex-direction: row;
-    margin-block-end: 30px;
-}
-
-.h4_filter{
-    display: flex;
-    font-size: 28px;
-    color: rgb(171, 0, 0);
-    background-color: rgba(196, 195, 195, 0.871);
-    border-radius: 20px;
-    padding: 10px;
+.filtros{
+    margin-left: 40%;
 }

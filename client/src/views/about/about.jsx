@@ -13,8 +13,7 @@ function About () {
 
         <h2>He creado esta página con el propósito de poner en práctica todos los conocimientos adquiridos hasta ahora. ¡Es mi primera creación web desde cero! Me esforcé para que tenga un aspecto más profesional y atractivo.</h2>
         <h2>Espero que disfruten explorando este sitio y que les sea útil. ¡Gracias por visitar mi página web! </h2>
-        </div>
-        <Link to={-1}><button className={Estilos.boton_Back}>Back</button></Link>
+        </div> <br />
     </div>
     )
 };

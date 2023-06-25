@@ -6,6 +6,7 @@ function NavBar ({handleChange, handleSubmit}) {
     return (
         <div className={Estilos.main}>
             <Link to={'/'}><button className={Estilos.botInicio}>Inicio</button></Link>
+
             <Link to={'/about'}><button className={Estilos.about}>ABOUT</button></Link>
 
             <form className={Estilos.formulario_nav} onChange={handleChange}>
@@ -14,6 +15,7 @@ function NavBar ({handleChange, handleSubmit}) {
             </form>
             
             <Link to={'/create'}><button className={Estilos.botCreate}>Create</button></Link>
+            
             <Link to={'/home'}><button className={Estilos.botCreate}>HOME</button></Link>
         </div>
     )

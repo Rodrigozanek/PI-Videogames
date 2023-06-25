@@ -1,0 +1,6 @@
+.pag{
+    display: flex;
+    grid-template-columns:auto;
+    gap: 1px;
+    justify-content: center ;
+}

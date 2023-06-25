@@ -27,7 +27,7 @@ function Detail () {
             <h1>Name: {game.name}</h1>
 
             <h3>Image:</h3>
-            {game.hasOwnProperty("background_image")?(<img src={game.background_image} alt="not found" className={Estilos.imagen_detail}/>) : (<img src={game.image} alt="not found" className={Estilos.imagen_detail}/>)}
+{game.hasOwnProperty("background_image")?(<img src={game.background_image} alt="not found" className={Estilos.imagen_detail}/>) : (<img src={game.image} alt="not found" className={Estilos.imagen_detail}/>)}
 
             <h3>Released: {game.released}</h3>
             

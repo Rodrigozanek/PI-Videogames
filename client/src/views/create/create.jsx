@@ -269,7 +269,7 @@ function Create () {
     const [game, setGame] = useState({
         name: "",
         description: "",
-        image: "https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c350.png",
+        image: "",
         released: "",
         rating: 0,
         genres: [],

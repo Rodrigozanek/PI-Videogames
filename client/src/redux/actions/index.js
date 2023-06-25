@@ -1,4 +1,4 @@
-import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES } from "./actionsTypes";
+import { ALL_GAMES, SEARCH_NAME, ID_GAME, POST_GAME, ALL_GENRES, RESET, FILTER_GENRES, ASC_RATING_ORDER, DESC_RATING_ORDER, FILTER_CREATOR} from "./actionsTypes";
 import axios from "axios";
 
 
@@ -59,3 +59,104 @@ export function genresDB (){
     }
 }
 
+
+
+
+
+
+/*---------------------------FILTROS-------------------------------------- */
+export const resetGames = ( ALL_GAMES) => {
+    return (dispatch) => {
+        if( ALL_GAMES){
+            return dispatch({type: RESET,  });
+        }
+      
+    };
+  };
+
+  //*
+  export const genresFilter = (genres) => (dispatch, getState) => {
+    let filteredGames = [];
+  
+    if (genres === "All") {
+      filteredGames = getState().allGames;
+    } else {
+      filteredGames = getState().allGames.filter((game) =>
+        (game.genres).includes(genres)
+      )
+    };
+    dispatch({
+      type: FILTER_GENRES,
+      payload: {
+        genres,
+        videogameGenre: filteredGames,
+      },
+    });
+  };
+  
+  
+  //*
+  export const filterAsc = (type) => (dispatch, getState) => {
+    const filtered = getState().filteredVideogames;
+    let videogamesOrder = []
+  
+      if (type === "asc_name") {
+        videogamesOrder = filtered.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name < b.name) return -1;
+          return 0;
+        });
+      } else if (type === "asc_rating") {
+        videogamesOrder = filtered.sort(
+          (a, b) => a.rating - b.rating
+        );
+      }
+      dispatch({
+        type: ASC_RATING_ORDER,
+        payload: {
+          videogamesOrder,
+          name: type,
+        },
+      });
+  }
+  
+  
+//*
+  export const filterDesc = (type) => (dispatch, getState) => {
+    const filtered = getState().filteredVideogames;
+    let videogamesOrder = []
+      
+      if (type === "desc_name") {
+        videogamesOrder = filtered.sort((a, b) => {
+          if (a.name < b.name) return 1;
+          if (a.name > b.name) return -1;
+          return 0;
+        });
+      } else if (type === "desc_rating") {
+        videogamesOrder = filtered.sort(
+          (a, b) => b.rating - a.rating
+        );
+      }
+      dispatch({
+        type: DESC_RATING_ORDER,
+        payload: {
+          videogamesOrder,
+          name: type,
+        },
+      });
+  }
+  
+  
+  
+  export const filterCreator = (source) => (dispatch, getState) => {
+    const allGames = getState().allGames.filter(function (G) {
+        return G.source === source
+      });
+    return dispatch({
+      type: FILTER_CREATOR,
+      payload: {
+        allGames,
+        source,
+      },
+    });
+  };
