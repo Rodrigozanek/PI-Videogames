@@ -14,6 +14,8 @@
     height: 590px;
 }
 
+
+
 .boton_home{
     display: flex;
     justify-content: center;
@@ -32,16 +34,30 @@
     margin-left: 45%;
     margin-top: 30px;
 }
-
 .boton_home:hover{
     transform: scale(0.8);
     transition-duration: 0.5s;
     background-color: darkred;
 }
 
+
+
 .description{
-    background-color: rgba(128, 128, 128, 0.831);
+    background-color: rgb(128, 128, 128);
+    height: auto;
+    width: 1000px;
+    margin-left: 9%;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-block-end: 10px;
 }
+.description_title{
+    margin-left: 41%;
+    text-decoration: underline;
+}
+
+
+
 
 .imagen_detail{
     width: 180px; 

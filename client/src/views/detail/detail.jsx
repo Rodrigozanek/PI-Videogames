@@ -34,24 +34,28 @@ function Detail () {
             <h3>Rating: {game.rating}</h3>
 
             <h3>Platforms:</h3>
-            <ul>
+            <h5>
             {Array.isArray(game.platforms) ? (
             game.platforms.map(p => p.platform.name).join(", ")
             ) : (
               (game.platforms)
             )}
-            </ul>
+            </h5>
 
             <h3>Genres:</h3>
-            <ul>
+            <h5>
             {Array.isArray(game.genres) ? (
             game.genres.map(genre => genre.name).join(", ")
             ) : (
             "Genres data is not available"
             )}
-            </ul>
+            </h5>
             </div> <br />
-            <h4 className={Estilos.description}>Description: {game.description}</h4>
+
+            <div className={Estilos.description}>
+            <h2 className={Estilos.description_title}>Description: </h2>
+            <p>{game.description}</p>
+            </div>
              
         </div>
     )

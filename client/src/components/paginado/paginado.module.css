@@ -5,3 +5,16 @@
     justify-content: center ;
     padding: 20px;
 }
+
+.botones_paginas{
+    background-color: rgb(14, 14, 14);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.botones_paginas:hover{
+    background-color: darkred;
+}

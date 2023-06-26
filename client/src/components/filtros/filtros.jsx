@@ -24,7 +24,7 @@ export function Filtros({pagina}) {
   // Ordenado de forma ascendente o descendente
   const handleOrder = (e) => {
     if (e.target.value === "asc_name" || e.target.value === "asc_rating") {
-      dispatch(filterAsc(e.target.value));
+      return dispatch(filterAsc(e.target.value));
     } else if (e.target.value === "desc_name" || e.target.value === "desc_rating") {
       dispatch(filterDesc(e.target.value));
     } else {
@@ -57,6 +57,8 @@ export function Filtros({pagina}) {
           ))}
         </select>
       </div>
+
+
       <div>
         <div className={Estilos.div_filtros}>
         <h2 className={Estilos.nombre_filtro}>Ordenamiento</h2>
@@ -69,9 +71,11 @@ export function Filtros({pagina}) {
           <option value="desc_rating">Rating (Higher-Lower)</option>
         </select>
       </div>
+
+
       <div>
         <div className={Estilos.div_filtros}>
-        <h2 className={Estilos.nombre_filtro}>Filtros de Creacion</h2>
+        <h2 className={Estilos.nombre_filtro}>Filtro Origen</h2>
         </div>
         <select className={Estilos.select_order} onChange={(e) => handleCreator(e)} >
           <option default>Todos</option>

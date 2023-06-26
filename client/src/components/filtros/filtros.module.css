@@ -1,5 +1,6 @@
 .nombre_filtro{
     font-size: 20px;
+    color: white;
 }
 
 .div_conteiner{
@@ -10,12 +11,13 @@
     align-items: center;
     padding: 15px;
     /* background-color: red; */
-    margin-left: -52%;
+    margin-left: -59%;
 }
 
 .select_order{
     border-radius: 20px;
     height: 20px;
+    background-color: rgb(178, 41, 41);
 }
 
 .div_filtros{

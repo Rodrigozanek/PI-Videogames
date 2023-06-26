@@ -14,7 +14,7 @@ export const Paginado = ({ videogamesPerPage, totalVideogames, pagina }) => {
     <nav className={Estilos.pag}>
         {pageNumbers.map((num) => (
           <div key={num}>
-            <button onClick={(e) => pagina(e, num)}>
+            <button className={Estilos.botones_paginas} onClick={(e) => pagina(e, num)}>
               {num}
             </button>
           </div>
