@@ -323,7 +323,7 @@ function Create () {
         }if (!obj.released) {
             alert("La fecha no puede estar vacio")
             return
-        }if (obj.rating >= 5 || obj.rating <= 0) {
+        }if (obj.rating > 5 || obj.rating < 0) {
             alert("El campo rating debe ser un numero entre 0 a 5")
             return
         }
