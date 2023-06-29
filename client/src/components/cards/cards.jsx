@@ -9,19 +9,8 @@ export default function Cards ({allGames}) {
              {listGames?.map(game=>
                <Card game = {game} />)}
             </div> 
+  //primero verificamos si hay juegos, despues hacemos un map, por cada juego creamos una card, esa card va a mandar el juego por props al componente Card
             );
 };
 
-// function Cards ({allGames}) {
 
-//   const listGames = allGames;
-//     return (
-//         <div className={Estilos.cardList}>
-//         {listGames?.map(game=>
-//           <Card game = {game} />)}
-//         </div>
-// //primero verificamos si hay juegos, despues hacemos un map, por cada juego creamos una card, esa card va a mandar el juego por props al componente Card
-//     )
-// };
-
-// export default Cards;

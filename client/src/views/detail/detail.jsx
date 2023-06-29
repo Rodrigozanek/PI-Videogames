@@ -24,7 +24,8 @@ function Detail () {
             <div className={Estilos.detalle_carta}>
             <h3>ID: {game.id}</h3>
 
-            <h1>Name: {game.name}</h1>
+            <h1>Name:</h1>
+            <h3>{game.name}</h3>
 
             <h3>Image:</h3>
             {game.hasOwnProperty("background_image")?(<img src={game.background_image} alt="not found" className={Estilos.imagen_detail}/>) : (<img src={game.image} alt="not found" className={Estilos.imagen_detail}/>)}

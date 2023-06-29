@@ -2,19 +2,21 @@ require("dotenv").config();
 const axios = require('axios');
 const { Videogame, Genre } = require('../db.js')
 const { YOUR_API_KEY } = process.env
-const URL = 'https://api.rawg.io/api/games?key='
+
 
 async function videogames (req, res) {
     try {
-        let gamesResults = []
-      let apiRAWG = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`
+        let gamesResults = [];
+      let apiRAWG = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
+
       for (let index = 0; index < 5; index++) {
         let games = (await axios.get(apiRAWG)).data
+
         let dataGame = games.results.map((G) => {
-          var game = {
+          let game = {
             name: G.name,
             image: G.background_image,
-            genres: G.genres.map((gen) => gen.name).filter(p => p != null).join(', '),
+            genres: G.genres.map((gen) => gen.name).join(', '),
             source: "Api",
             id: G.id,
             rating: G.rating
@@ -44,7 +46,7 @@ async function videogames (req, res) {
 
 };
 
-module.exports= videogames;
+module.exports = videogames;
 
 
 

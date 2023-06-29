@@ -326,14 +326,14 @@ function Create () {
         }if (obj.rating > 5 || obj.rating < 0) {
             alert("El campo rating debe ser un numero entre 0 a 5")
             return
+        }if (!obj.image) {
+            alert("El campo image URL no puede estar vacio")
+            return
         }
-
 
         dispatch(createGame(obj));
         e.target.reset();
         alert("Videogame created successfully!");
-        //  dispatch(getVideogames())
-
         setGame({
             name: "",
             description: "",
@@ -465,7 +465,7 @@ return (
             </div>
 
             <div className={Estilos.div_botonCreate}>
-                <button className={Estilos.btn_create} type="submit">Create!</button>
+                <button className={Estilos.btn_create} type="submit">GO!</button>
             </div>
         </div>
     </form>

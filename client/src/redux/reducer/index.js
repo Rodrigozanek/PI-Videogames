@@ -7,7 +7,7 @@ let initialState = {
     genres: [],
     filteredVideogames: [],
     orderBy: "Select",
-    filterBy: "All",
+    filterBy: "All",
 }
 
 function reducer (state = initialState, {type, payload}){
@@ -75,7 +75,7 @@ case RESET:
         ...state,
         filteredVideogames: payload.allGames,
         filterBy: payload.source,
-              };
+        };
 
         default:
             return {...state};

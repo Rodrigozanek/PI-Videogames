@@ -14,8 +14,6 @@ function Home () {
     const dispatch = useDispatch();
     const allGames = useSelector((state)=>state.allGames)//home suscripto al estado allGames 
     const [searcheString, setSearchString] = useState("");
-
-
 //---------------------------------------------------------------------------------------------
     const filteredVideogames = useSelector((state) => state.filteredVideogames);
     const filterBy = useSelector((state) => state.filterBy);
@@ -56,14 +54,19 @@ function Home () {
         setPage(num);
     }
 
-    const [page, setPage] = useState(1);
-    const [videogamesPerPage] = useState(15);
+    const [page, setPage] = useState(1);//representa la página actual
 
-    let lastCardPerPage = page * videogamesPerPage; //Se calcula el índice del último videojuego que se mostrará en la página actual multiplicando page por videogamesPerPage.
-    let firtsCardPerPage = lastCardPerPage - videogamesPerPage; //  Se calcula el índice del primer videojuego que se mostrará en la página actual restando 
-    let currentPageGames = allVideogames.slice(firtsCardPerPage, lastCardPerPage);
+    const [videogamesPerPage] = useState(15);//representa la cantidad de elementos de videojuegos que se mostrarán por página y se inicializa en 15
 
-    //--------------------------------------------------------------------------------
+    let lastCardPerPage = page * videogamesPerPage; //Se calcula el índice del último videojuego que se mostrará en la página actual multiplicando page por videogamesPerPage
+
+    let firtsCardPerPage = lastCardPerPage - videogamesPerPage; //  Se calcula el índice del primer videojuego que se mostrará en la página actual restando
+
+    let pageGames = allVideogames.slice(firtsCardPerPage, lastCardPerPage);
+
+    useEffect(()=>{
+        setPage(1)
+    }, [allGames])
 
 
     return (
@@ -71,14 +74,12 @@ function Home () {
             <NavBar handleChange={(e)=>handleChange(e)} handleSubmit={(e)=>handleSubmit(e)}/>
 
             <div className={Estilos.filtros}>
-            <Filtros pagina={pagina}  /> 
+            <Filtros pagina={pagina}/> 
             </div><br />
 
-            <Cards allGames={currentPageGames}/> <br />
-            <Paginado
-                videogamesPerPage={videogamesPerPage}
-                totalVideogames={allVideogames.length}
-                pagina={pagina}/>
+            <Cards allGames={pageGames} /> <br />
+
+            <Paginado videogamesPerPage={videogamesPerPage} totalVideogames={allVideogames.length} pagina={pagina}/>
         </div>
     )
 };

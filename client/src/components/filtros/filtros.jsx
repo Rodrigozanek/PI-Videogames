@@ -65,10 +65,10 @@ export function Filtros({pagina}) {
         </div>
         <select className={Estilos.select_order} onChange={(e) => handleOrder(e)}>
           <option value="All" default>Todos</option>
-          <option value="asc_name">Alphabetically (A-Z)</option>
-          <option value="desc_name">Alphabetically (Z-A)</option>
-          <option value="asc_rating">Rating (Lower-Higher)</option>
-          <option value="desc_rating">Rating (Higher-Lower)</option>
+          <option value="asc_rating">Rating (Menor - Mayor)</option>
+          <option value="desc_rating">Rating (Mayor - Menor)</option>
+          <option value="asc_name">alphabetically (A-Z)</option>
+          <option value="desc_name">Aalphabetically (Z-A)</option>
         </select>
       </div>
 
@@ -87,4 +87,4 @@ export function Filtros({pagina}) {
   );
 }
 
-export default Filtros;
+export default Filtros;
