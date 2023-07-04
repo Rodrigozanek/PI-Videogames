@@ -1,255 +1,3 @@
-// // // import React, { useEffect, useState } from "react";
-// // // import { useDispatch, useSelector } from "react-redux";
-// // // import Estilos from "../create/create.module.css";
-// // // import { genresDB, createGame } from "../../redux/actions";
-// // // import NavBar from "../../components/navBar/navBar.jsx";
-
-// // // function Create() {
-// // //   const genres = useSelector((state) => state.genres);
-// // //   const dispatch = useDispatch();
-
-// // //   const [selectedGenres, setSelectedGenres] = useState([]);
-
-// // //   const [input, setInput] = useState({
-// // //     name: "",
-// // //     image: "",
-// // //     description: "",
-// // //     released: "",
-// // //     rating: "",
-// // //     platforms: "",
-// // //   });
-
-// // //   const [error, setError] = useState({
-// // //     name: "",
-// // //     image: "",
-// // //     description: "",
-// // //     released: "",
-// // //     rating: "",
-// // //     platforms: "",
-// // //   });
-
-// // //   const validate = (input) => {
-// // //     const errors = {};
-
-// // //     if (!/^[A-Z]\w{5,12}$/.test(input.name)) {
-// // //       errors.name = "Invalid name";
-// // //     }
-
-// // //     if (!input.image) {
-// // //       errors.image = "Image is required";
-// // //     }
-
-// // //     if (!input.description) {
-// // //       errors.description = "Description is required";
-// // //     }
-
-// // //     if (!input.released) {
-// // //       errors.released = "Release date is required";
-// // //     }
-
-// // //     if (!input.rating) {
-// // //       errors.rating = "Rating is required";
-// // //     }
-
-// // //     if (!input.platforms) {
-// // //       errors.platforms = "Platform is required";
-// // //     }
-
-// // //     setError(errors);
-// // //     return Object.keys(errors).length === 0;
-// // //   };
-
-// // //   function handleChange(e) {
-// // //     setInput({
-// // //       ...input,
-// // //       [e.target.name]: e.target.value,
-// // //     });
-
-// // //     validate({
-// // //       ...input,
-// // //       [e.target.name]: e.target.value,
-// // //     });
-// // //   }
-
-// // //   function handleGenres(event) {
-// // //     const selectedGenre = event.target.value;
-
-// // //     if (selectedGenre && !selectedGenres.includes(selectedGenre)) {
-// // //       setSelectedGenres([...selectedGenres, selectedGenre]);
-// // //     }
-// // //   }
-
-// // //   useEffect(() => {
-// // //     dispatch(genresDB());
-// // //   }, [dispatch]);
-
-
-
-// // //   function handleSubmit(e) {
-// // //     e.preventDefault();
-
-// // //     const isValid = validate(input);
-
-// // //     if (isValid) {
-// // //       const gameData = {
-// // //         ...input,
-// // //         genres: selectedGenres,
-// // //       };
-
-// // //     //   dispatch(createGame(gameData));
-// // //       // Aquí puedes hacer la solicitud HTTP al backend para guardar el juego
-// // //       // utilizando la función createGame del action creator.
-// // //       fetch("http://localhost:3001/videogames", {
-// // //         method: "POST",
-// // //         headers: {
-// // //           "Content-Type": "application/json",
-// // //         },
-// // //         body: JSON.stringify(gameData),
-// // //       })
-// // //         .then((response) => response.json())
-// // //         .then((data) => {
-// // //           // Aquí puedes realizar acciones adicionales después de guardar el juego, si es necesario
-// // //           console.log("Game saved successfully:", data);
-// // //         })
-// // //         .catch((error) => {
-// // //           // Aquí puedes manejar los errores en caso de que la solicitud falle
-// // //           console.error("Error saving game:", error);
-// // //         });
-// // //     }
-// // //   }
-
-// // //   return (
-// // //     <div>
-// // //       <NavBar/>
-// // //       <form className={Estilos.formulario} onSubmit={handleSubmit}>
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Name:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="name"
-// // //             value={input.name}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <br />
-// // //           <span>{error.name}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Image:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="image"
-// // //             value={input.image}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <span>{error.image}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Description:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="description"
-// // //             value={input.description}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <span>{error.description}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Platform:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="platforms"
-// // //             value={input.platforms}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <span>{error.platforms}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Released:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="released"
-// // //             value={input.released}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <span>{error.released}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <div className={Estilos.opciones}>
-// // //           <h4>Rating:</h4>
-// // //           <input
-// // //             className={Estilos.Input}
-// // //             name="rating"
-// // //             value={input.rating}
-// // //             onChange={handleChange}
-// // //           />
-// // //           <span>{error.rating}</span>
-// // //         </div>
-// // //         <br />
-
-// // //         <select
-// // //           value={selectedGenres}
-// // //           onChange={handleGenres}
-// // //           multiple
-// // //         >
-// // //           {genres.map((genre) => (
-// // //             <option key={genre.name} value={genre.name}>
-// // //               {genre.name}
-// // //             </option>
-// // //           ))}
-// // //         </select>
-
-// // //         <div>
-// // //           {selectedGenres.map((g) => {
-// // //             return (
-// // //               <div key={g}>
-// // //                 <p>{g}</p>
-// // //               </div>
-// // //             );
-// // //           })}
-// // //         </div>
-
-// // //         <button className={Estilos.btn_create} type="submit">
-// // //           Create Game!
-// // //         </button>
-// // //       </form>
-// // //     </div>
-// // //   );
-// // // }
-
-// // // export default Create;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from "react-redux"
 import Estilos from "../create/create.module.css"
@@ -262,8 +10,10 @@ import NavBar from "../../components/navBar/navBar.jsx"
 function Create () {
   const dispatch = useDispatch();
     const genres = useSelector((store) => store.genres);
-    const genres1 = Array.isArray(genres) ? genres.slice(0, 10) : [];
-    const genres2 = Array.isArray(genres) ? genres.slice(10, 20) : [];
+    const genres1 = Array.isArray(genres) ? genres.slice(0, 5) : [];
+    const genres2 = Array.isArray(genres) ? genres.slice(5, 10) : [];
+    const genres3 = Array.isArray(genres) ? genres.slice(10, 15) : [];
+    const genres4 = Array.isArray(genres) ? genres.slice(15, 20) : [];
     
 
     const [game, setGame] = useState({
@@ -276,25 +26,131 @@ function Create () {
         platforms: [],
     });
 
+    //---------------------------------------------------------
+    const [errorN, setErrorN] = useState({
+        name: "Requerido",
+    });
+    const [errorD, setErrorD] = useState({
+        description: "Requerido"
+    })
+    const [errorI, setErrorI] = useState({
+        image: "Requerido"
+    })
+    const [errorF, setErrorF] = useState({
+        released: "Requerido"
+    })
+    const [errorR, setErrorR] = useState({
+        rating: "Requerido"
+    })
+
+    const [platformsError, setPlatformsError] = useState("");
+
+    //---------------------------------------------------------
+
+    //----------------------------------------------------------
+    const validateName = (value) => {
+        if (/[-'/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g.test(value)) {
+          setErrorN((prevError) => ({ ...prevError, name: "formato invalido" }));
+        } else {
+          setErrorN((prevError) => ({ ...prevError, name: "" }));
+        }
+      };
+    
+      const validateDescription = (value) => {
+        if (/[-'/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g.test(value)) {
+          setErrorD((prevError) => ({ ...prevError, description: "formato invalido" }));
+        } else {
+          setErrorD((prevError) => ({ ...prevError, description: "" }));
+        }
+      };
+    
+      const validateReleased = (value) => {
+        if (!value) {
+          setErrorF((prevError) => ({ ...prevError, released: "Llenar campo" }));
+        } else {
+          setErrorF((prevError) => ({ ...prevError, released: "" }));
+        }
+      };
+
+      const validateImage = (value) => {
+        if (!value) {
+          setErrorI((prevError) => ({ ...prevError, image: "Llenar campo" }));
+        } else {
+          setErrorI((prevError) => ({ ...prevError, image: "" }));
+        }
+      };
+    
+      const validateRating = (value) => {
+        if (isNaN(value) || value < 0 || value > 5) {
+          setErrorR((prevError) => ({
+            ...prevError,
+            rating: "El campo debe ser un número entre 0 y 5",
+          }));
+        } else {
+          setErrorR((prevError) => ({ ...prevError, rating: "" }));
+        }
+      };
+
+      const validatePlatforms = () => {
+        if (game.platforms.length === 0) {
+          setPlatformsError("Selecciona al menos una plataforma.");
+        } else {
+          setPlatformsError("");
+        }
+      };
+    //------------------------------------------------------------
+
     useEffect(() => {
         dispatch(genresDB());
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+
+
     const randomPlatforms = ["PC", "iOS", "Android", "macOS",  "PlayStation 4", "PlayStation 5", "Xbox", "PS Vita"]
 
+
+
     const ChangeInput = (e) => {
-        if (e.target.name === "genres" || e.target.name === "platforms") {
-        const arr = game[e.target.name];
-        setGame({
-            ...game,
-            [e.target.name]: arr.concat(e.target.value),
-        });
-    } else {
         setGame({
             ...game,
             [e.target.name]: e.target.value,
         });
-    }
+
+    //---------------------------------------------------
+    if (e.target.name === "name") {
+        validateName(e.target.value);
+      } else if (e.target.name === "description") {
+        validateDescription(e.target.value);
+      } else if (e.target.name === "image") {
+        validateImage(e.target.value);
+      } else if (e.target.name === "released") {
+        validateReleased(e.target.value);
+      } else if (e.target.name === "rating") {
+        validateRating(e.target.value);
+      } else if (e.target.name === "genres" || e.target.name === "platforms") {
+        const arr = game[e.target.name];
+        setGame({
+          ...game,
+          [e.target.name]: arr.concat(e.target.value),
+        });
+        if (e.target.name === "platforms") {
+          validatePlatforms();
+        }
+      }
+    //---------------------------------------------------
+
+    //     if (e.target.name === "genres" || e.target.name === "platforms") {
+    //     const arr = game[e.target.name];
+    //     setGame({
+    //         ...game,
+    //         [e.target.name]: arr.concat(e.target.value),
+    //     });
+    // } else {
+    //     setGame({
+    //         ...game,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // }
     };
 
     
@@ -313,23 +169,23 @@ function Create () {
         };
 
         // Validaciones
-        if (!obj.name) {
-            alert("El campo nombre no puede estar vacio")
-            return
-        }
-        if (!obj.description) {
-            alert("El campo nombre no puede estar vacio")
-            return
-        }if (!obj.released) {
-            alert("La fecha no puede estar vacio")
-            return
-        }if (obj.rating > 5 || obj.rating < 0) {
-            alert("El campo rating debe ser un numero entre 0 a 5")
-            return
-        }if (!obj.image) {
-            alert("El campo image URL no puede estar vacio")
-            return
-        }
+        // if (!obj.name) {
+        //     alert("El campo nombre no puede estar vacio")
+        //     return
+        // }
+        // if (!obj.description) {
+        //     alert("El campo nombre no puede estar vacio")
+        //     return
+        // }if (!obj.released) {
+        //     alert("La fecha no puede estar vacio")
+        //     return
+        // }if (obj.rating > 5 || obj.rating < 0) {
+        //     alert("El campo rating debe ser un numero entre 0 a 5")
+        //     return
+        // }if (!obj.image) {
+        //     alert("El campo image URL no puede estar vacio")
+        //     return
+        // }
 
         dispatch(createGame(obj));
         e.target.reset();
@@ -357,7 +213,7 @@ return (
         noValidate
         onChange={(e) => ChangeInput(e)}
         onSubmit={(e) => handleSubmit(e)}>
-        <div>
+        <div className={Estilos.div_general}>
         <div>
             <div >
                 <div>
@@ -366,8 +222,9 @@ return (
                     className={Estilos.Input}
                     type="text"
                     name="name"
-                    value={game.name}
-                    ></input>
+                    value={game.name}>
+                    </input>
+                    <span>{errorN.name}</span>
                 </div> <br />
 
                 <div>
@@ -376,8 +233,9 @@ return (
                     className={Estilos.Input}
                     type="text"
                     name="description"
-                    value={game.description}
-                    ></input>
+                    value={game.description}>
+                    </input>
+                    <span>{errorD.description}</span>
                 </div> <br />
 
                 <div>
@@ -386,8 +244,9 @@ return (
                     className={Estilos.Input}
                     type="date"
                     name="released"
-                    value={game.released}
-                    ></input>
+                    value={game.released}>
+                    </input>
+                    <span>{errorF.released}</span>
                 </div> <br />
 
                 <div>
@@ -396,8 +255,9 @@ return (
                     className={Estilos.Input}
                     type="number"
                     name="rating"
-                    value={game.rating}
-                    ></input>
+                    value={game.rating}>
+                    </input>
+                    <span>{errorR.rating}</span>
                 </div>
             </div> <br />
 
@@ -407,68 +267,95 @@ return (
                 className={Estilos.Input}
                 type="text"
                 name="image"
-                value={game.image}
-                ></input>
+                value={game.image}>
+                </input>
+                <span>{errorI.image}</span>
             </div>
         </div>
 
         
-            <div >
-                <div > <br />
+        <div >
+            <div>
 
 
-                    <h4 className={Estilos.h4_options_title}>Options GENRES</h4>
-                    <div className={Estilos.opciones}>
-                        <div>
-                            {genres1.map((gen) => (
-                            <div key={gen.name}>
-                                <h4 name={gen}>{gen.name}</h4>
-                                <input
-                                type="checkbox"
-                                name="genres"
-                                value={gen.name}
-                                ></input>
-                            </div>
-                            ))}
-                        </div>
-                        <div>
-                            {genres2.map((gen) => (
-                            <div key={gen.name}>
-                                <h4 name={gen}>{gen.name}</h4>
-                                <input
-                                type="checkbox"
-                                name="genres"
-                                value={gen.name}
-                                ></input>
-                            </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div > <br />
-
-                    <h4 className={Estilos.h4_options_title}>Options PLATFORMS</h4>
-                    <div className={Estilos.opciones}>
-                        {randomPlatforms.map((P) => (
-                        <div key={P}>
-                            <h4 name={P}>{P}</h4>
+                <h4 className={Estilos.h4_options_title}>Options GENRES</h4>
+                <div className={Estilos.opciones}>
+                    <div>
+                        {genres1.map((gen) => (
+                        <div key={gen.name}>
+                            <h4 name={gen}>{gen.name}</h4>
                             <input
                             type="checkbox"
-                            name="platforms"
-                            value={P}
+                            name="genres"
+                            value={gen.name}
+                            ></input>
+                        </div>
+                        ))}
+                    </div>
+                    <div>
+                        {genres2.map((gen) => (
+                        <div key={gen.name}>
+                            <h4 name={gen}>{gen.name}</h4>
+                            <input
+                            type="checkbox"
+                            name="genres"
+                            value={gen.name}
+                            ></input>
+                        </div>
+                        ))}
+                    </div>
+                    <div>
+                        {genres3.map((gen) => (
+                        <div key={gen.name}>
+                            <h4 name={gen}>{gen.name}</h4>
+                            <input
+                            type="checkbox"
+                            name="genres"
+                            value={gen.name}
+                            ></input>
+                        </div>
+                        ))}
+                    </div>
+                    <div>
+                        {genres4.map((gen) => (
+                        <div key={gen.name}>
+                            <h4 name={gen}>{gen.name}</h4>
+                            <input
+                            type="checkbox"
+                            name="genres"
+                            value={gen.name}
                             ></input>
                         </div>
                         ))}
                     </div>
                 </div>
-                
             </div>
+            <div > <br />
 
-            <div className={Estilos.div_botonCreate}>
-                <button className={Estilos.btn_create} type="submit">GO!</button>
+                <h4 className={Estilos.h4_options_title}>Options PLATFORMS</h4>
+                <div className={Estilos.opciones}>
+                    {randomPlatforms.map((P) => (
+                    <div key={P}>
+                        <h4 name={P}>{P}</h4>
+                        <input
+                        type="checkbox"
+                        name="platforms"
+                        value={P}>
+                        </input>
+                        <span>{platformsError.platforms}</span>
+                    </div>
+                    ))}
+                </div>
             </div>
+            
         </div>
-    </form>
+
+        <div className={Estilos.div_botonCreate}>
+            {!platformsError || !errorN || !errorD || !errorI || !errorF || !errorR ? null : <button className={Estilos.btn_create} type="submit">GO!</button>}
+            
+        </div>
+    </div>
+</form>
 </div>
 );
 

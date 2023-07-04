@@ -36,20 +36,16 @@ function Detail () {
 
             <h3>Platforms:</h3>
             <h5>
-            {Array.isArray(game.platforms) ? (
-            game.platforms.map(p => p.platform.name).join(", ")
-            ) : (
-              (game.platforms)
-            )}
+            { Array.isArray(game.platforms) 
+            ? (game.platforms.map(p => p.platform.name).join(", ")) 
+            : ((game.platforms)) }
             </h5>
 
             <h3>Genres:</h3>
             <h5>
-            {Array.isArray(game.genres) ? (
-            game.genres.map(genre => genre.name).join(", ")
-            ) : (
-            "Genres data is not available"
-            )}
+            { Array.isArray(game.genres) 
+            ? (game.genres.map(genre => genre.name).join(", ")) 
+            : ("Genres data is not available") }
             </h5>
             </div> <br />
 

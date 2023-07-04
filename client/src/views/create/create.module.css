@@ -17,7 +17,7 @@
     margin-top: 20px;
     flex-direction: column;
     background-color:rgb(128, 128, 128);
-    height: 1800px;
+    height: 1450px;
     width: 550px;
     margin-left: 30%;
     border-radius: 20px;
@@ -62,7 +62,6 @@
     cursor: pointer;
     border: 3px solid black;
     margin-top: 20px;
-    margin-block-end: 10px;
     margin-left: 45%;
 }
 

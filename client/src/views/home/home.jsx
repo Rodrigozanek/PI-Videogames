@@ -64,10 +64,11 @@ function Home () {
 
     let pageGames = allVideogames.slice(firtsCardPerPage, lastCardPerPage);
 
+    //-------------------------------------------
     useEffect(()=>{
         setPage(1)
     }, [allGames])
-
+    //por cada busqueda volvemos a la pagina 1 y eliminamos un problema
 
     return (
         <div>
@@ -76,10 +77,11 @@ function Home () {
             <div className={Estilos.filtros}>
             <Filtros pagina={pagina}/> 
             </div><br />
+            
+            <Paginado videogamesPerPage={videogamesPerPage} totalVideogames={allVideogames.length} pagina={pagina}/>
 
             <Cards allGames={pageGames} /> <br />
 
-            <Paginado videogamesPerPage={videogamesPerPage} totalVideogames={allVideogames.length} pagina={pagina}/>
         </div>
     )
 };
